@@ -68,5 +68,12 @@ class TicTacToe
       end
       return FALSE
     end
+    def full?
+    if @board.all? {|@space| @space == "X" || @space == "O"}
+      return TRUE
+    else
+      return FALSE
+    end
     
+  end
 end 
