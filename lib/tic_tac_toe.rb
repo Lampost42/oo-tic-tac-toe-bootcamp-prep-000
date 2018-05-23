@@ -59,21 +59,27 @@ class TicTacToe
     end
   end
   def won?
-      WIN_COMBINATIONS.each do |@combo|
-        if @combo.all? {|@space| @board[@space] == "X"}
-          return @combo
-        elsif @combo.all? {|@space| @board[@space] == "O"}
-          return @combo
-        end
+    WIN_COMBINATIONS.each do |@combo|
+      if @combo.all? {|@space| @board[@space] == "X"}
+        return @combo
+      elsif @combo.all? {|@space| @board[@space] == "O"}
+        return @combo
       end
-      return FALSE
     end
-    def full?
+    return FALSE
+  end
+  def full?
     if @board.all? {|@space| @space == "X" || @space == "O"}
       return TRUE
     else
       return FALSE
+  end
+  def draw?(board)
+    if won?(board) == FALSE && full?(board) == TRUE
+      return TRUE
+    else
+      return FALSE
     end
-    
+  end
   end
 end 
