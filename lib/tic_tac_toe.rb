@@ -23,7 +23,7 @@ class TicTacToe
     @index = @input.to_i - 1
   end
   def move
-    @board[@index] = @current_player
+    @board[@index] = current_player
   end
   def position_taken?
     @board[@index] != " " && @board[@index] != ""
@@ -50,5 +50,13 @@ class TicTacToe
       end
     end
   end
-  
+  def current_player
+    turn_count
+    if @turn.even? 
+      return "X"
+    else
+      return  "O"
+    end
+  end
+
 end 
