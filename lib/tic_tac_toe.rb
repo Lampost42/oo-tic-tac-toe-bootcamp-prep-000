@@ -22,7 +22,7 @@ class TicTacToe
   def input_to_index(input)
     return input.to_i - 1
   end
-  def move(board, index)
+  def move(index)
     @board[index] = current_player
   end
   def position_taken?(index)
