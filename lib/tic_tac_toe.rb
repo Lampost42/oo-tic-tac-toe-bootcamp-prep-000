@@ -82,5 +82,12 @@ class TicTacToe
       return FALSE
     end
   end
+  def over?
+    if won? != FALSE || draw? == TRUE
+      return TRUE
+    else
+      return FALSE
+    end
+  end
   
 end 
