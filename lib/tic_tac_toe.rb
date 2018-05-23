@@ -22,8 +22,8 @@ class TicTacToe
   def input_to_index(input)
     return input.to_i - 1
   end
-  def move(index)
-    @board[index] = current_player
+  def move(index, mark)
+    @board[index] = mark
   end
   def position_taken?(index)
     @board[index] != " " && @board[index] != ""
@@ -36,7 +36,8 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-      move(index)
+      mark = current_player
+      move(index, mark)
       display_board
     else
       turn
