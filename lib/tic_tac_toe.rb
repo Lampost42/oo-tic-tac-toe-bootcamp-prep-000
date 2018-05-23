@@ -25,8 +25,8 @@ class TicTacToe
   def move(board, index)
     @board[index] = current_player(board)
   end
-  def position_taken?
-    @board[@index] != " " && @board[@index] != ""
+  def position_taken?(board, index)
+    board[index] != " " && board[index] != ""
   end
   def valid_move?(board, index)
     index.between?(0,8) && !position_taken?(board)
@@ -44,7 +44,7 @@ class TicTacToe
   end
   def turn_count(board)
     turn_num = 0
-    board.each do |space|
+    @board.each do |space|
       if space == "X" || space == "O"
         turn_num += 1
       end
