@@ -73,13 +73,14 @@ class TicTacToe
       return TRUE
     else
       return FALSE
+    end
   end
-  def draw?(board)
-    if won?(board) == FALSE && full?(board) == TRUE
+  def draw?
+    if won? == FALSE && full? == TRUE
       return TRUE
     else
       return FALSE
     end
   end
-  end
+  
 end 
