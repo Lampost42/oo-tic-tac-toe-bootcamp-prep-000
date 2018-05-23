@@ -44,8 +44,8 @@ class TicTacToe
   end
   def turn_count
     @turn = 0
-    @board.each do |@space|
-      if @space == "X" || @space == "O"
+    @board.each do |space|
+      if space == "X" || space == "O"
         @turn += 1
       end
     end
@@ -59,17 +59,17 @@ class TicTacToe
     end
   end
   def won?
-    WIN_COMBINATIONS.each do |@combo|
-      if @combo.all? {|@space| @board[@space] == "X"}
-        return @combo
-      elsif @combo.all? {|@space| @board[@space] == "O"}
-        return @combo
+    WIN_COMBINATIONS.each do |combo|
+      if combo.all? {|space| @board[space] == "X"}
+        return combo
+      elsif combo.all? {|space| @board[space] == "O"}
+        return combo
       end
     end
     return FALSE
   end
   def full?
-    if @board.all? {|@space| @space == "X" || @space == "O"}
+    if @board.all? {|space| space == "X" || space == "O"}
       return TRUE
     else
       return FALSE
